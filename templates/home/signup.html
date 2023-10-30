@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+{% block title %}
+Sign up
+{% endblock title %}
+
+{% block body %}
+<main class="form-signup w-100 ">
+    <div class="container mt-5 ">
+
+        <form class='' action='{% url 'signup' %}' method='POST' >
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="email" class="form-label">Email </label>
+              <input type="email" class="form-control" id="email" aria-describedby="usernameHelp" name='email' required>
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username </label>
+              <input type="username" class="form-control" id="username" aria-describedby="usernameHelp" name='username' required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name='password' required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+              <label class="form-check-label" for="exampleCheck1">I accept all T&C.</label>
+            </div>
+            <button type="submit" class="btn btn-primary" >Submit</button>
+          </form>
+    </div>
+</main>
+{% endblock body %}
